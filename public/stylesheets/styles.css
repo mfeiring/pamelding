@@ -1,0 +1,298 @@
+* {
+  box-sizing: border-box;
+  font-family: 'FFDINWebProLight';
+}
+html {
+  font-size: 1em;
+}
+@media screen and (min-width: 30em) {
+  html {
+    font-size: 3vw;
+  }
+}
+@media screen and (min-width: 55em) {
+  html {
+    font-size: 1.5em;
+  }
+}
+button {
+  border: none;
+  background: transparent;
+  outline: none;
+  cursor: pointer;
+}
+a {
+  color: currentColor;
+}
+address {
+  font-style: normal;
+}
+body {
+  margin: 0;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+header {
+  font-size: 1.2em;
+  line-height: 10vh;
+  padding-left: 5vmin;
+}
+main {
+  height: 90%;
+  width: 80%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: black;
+  color: white;
+}
+main a {
+  text-decoration: none;
+}
+ul {
+  padding: 20vh 10vw;
+}
+@media screen and (min-width: 30em) {
+  ul {
+    padding: 30vh 15vw;
+  }
+}
+ul li {
+  list-style: none;
+  font-size: 2em;
+  margin-bottom: 0.3em;
+}
+ul li a {
+  position: relative;
+}
+ul li a:before {
+  content: '';
+  width: calc(100% - 100px);
+  height: 2px;
+  background-color: currentColor;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: scale(0);
+  transform-origin: left;
+}
+ul li a:hover:before {
+  transform: scale(1);
+  transition: 0.3s;
+}
+ul li a:hover:after {
+  content: url('../arrow.svg');
+}
+aside {
+  height: 50vmin;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #B2B2B2;
+}
+aside button {
+  height: 100%;
+  width: 100%;
+  width: 50vmin;
+  position: relative;
+  overflow: hidden;
+  font-size: 1.4em;
+}
+aside button .text,
+aside button .circles {
+  display: inline-block;
+  width: 250px;
+  max-width: 100%;
+  position: absolute;
+  bottom: 4vmin;
+  left: 6vmin;
+}
+aside button .text {
+  text-align: left;
+  max-width: 100%;
+  padding: calc(35vmin / 2 - 1.6em / 2) 0;
+  z-index: 1;
+}
+aside button .text:before {
+  content: '';
+  width: 100%;
+  height: 2px;
+  background-color: currentColor;
+  position: absolute;
+  z-index: 1;
+  bottom: calc(35vmin / 2 - 1.8em / 2);
+  left: 0;
+  transform: scale(0);
+  transform-origin: left;
+}
+aside button .text:hover:before {
+  transform: scale(1);
+  transition: 0.3s;
+}
+@media screen and (min-width: 30em) {
+  aside button .text {
+    text-align: center;
+  }
+}
+aside button .circles {
+  height: 250px;
+  max-height: 100%;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  transition: filter 200ms ease-in-out;
+  filter: drop-shadow(0px 0px transparent) drop-shadow(0px 0px transparent) drop-shadow(0px 0px transparent) drop-shadow(0px 0px transparent) drop-shadow(0px 0px transparent) drop-shadow(0px 0px transparent) drop-shadow(0px 0px transparent) drop-shadow(60px -60px transparent);
+}
+aside button:hover .circles,
+aside button:focus .circles {
+  border-color: white;
+  filter: drop-shadow(4px -4px white) drop-shadow(8px -8px white) drop-shadow(12px -12px white) drop-shadow(16px -16px white) drop-shadow(20px -20px white) drop-shadow(24px -24px white) drop-shadow(28px -28px white) drop-shadow(60px -60px transparent);
+}
+form {
+  width: 95vw;
+  height: 70vh;
+  background: #B2B2B2;
+  padding: 40vh 10vw 0;
+  position: relative;
+}
+@media screen and (min-width: 30em) {
+  form {
+    padding: 25vh 55vmin 0 10vw;
+  }
+}
+form label {
+  display: block;
+  color: white;
+  font-size: 1.5em;
+}
+form input {
+  background-color: transparent;
+  font-size: 1.3em;
+  border-style: solid;
+  border-color: black;
+  border-width: 0 0 1px 0;
+  width: 100%;
+  margin-bottom: 1.5em;
+}
+form input:focus {
+  outline: none;
+}
+form .close {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+form button[type="submit"] {
+  height: 50vmin;
+  background-color: black;
+  color: white;
+  font-size: 1.5em;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+form button[type="submit"] > span {
+  display: inline-block;
+  height: 15vmin;
+  width: 15vmin;
+  line-height: 15vmin;
+  transform: translate3d(0, 0, 0);
+  transition: all 200ms ease-in-out;
+  box-shadow: none;
+}
+form button[type="submit"] > span span {
+  position: relative;
+}
+form button[type="submit"] > span span:before {
+  content: '';
+  width: 100%;
+  height: 2px;
+  background-color: currentColor;
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
+  transform: scale(0);
+  transform-origin: left;
+}
+form button[type="submit"]:hover > span {
+  box-shadow: 0 0 0 1px white, 0 0 0 7px black,
+      0 0 0 8px white, 0 0 0 14px black,
+      0 0 0 15px white, 0 0 0 21px black,
+      0 0 0 22px white, 0 0 0 28px black,
+      0 0 0 29px white, 0 0 0 35px black,
+      0 0 0 36px white, 0 0 0 42px black,
+      0 0 0 43px white, 0 0 0 49px black,
+      0 0 0 50px white, 0 0 0 56px black,
+      0 0 0 57px white, 0 0 0 63px black,
+      0 0 0 64px white, 0 0 0 70px black,
+      0 0 0 71px white, 0 0 0 77px black,
+      0 0 0 78px white, 0 0 0 84px black,
+      0 0 0 85px white, 0 0 0 91px black,
+      0 0 0 92px white, 0 0 0 98px black,
+      0 0 0 99px white, 0 0 0 105px black,
+      0 0 0 106px white, 0 0 0 112px black,
+      0 0 0 113px white, 0 0 0 119px black,
+      0 0 0 120px white, 0 0 0 126px black,
+      0 0 0 127px white, 0 0 0 133px black,
+      0 0 0 134px white, 0 0 0 140px black,
+      0 0 0 141px white, 0 0 0 147px black,
+      0 0 0 148px white, 0 0 0 154px black,
+      0 0 0 155px white;
+}
+form button[type="submit"]:hover > span span:before {
+  transform: scale(1);
+  transition: 0.3s;
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: right;
+}
+footer button {
+  font-size: 1.2em;
+  width: 20vw;
+  height: 20vmin;
+}
+footer button span {
+  position: relative;
+}
+footer button span:before {
+  content: '';
+  width: 100%;
+  height: 2px;
+  background-color: currentColor;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: scale(0);
+  transform-origin: left;
+}
+footer button:hover span:before {
+  transform: scale(1);
+  transition: 0.3s;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 2;
+  background-color: rgba(255, 255, 255, 0.95);
+  font-size: 1em;
+}
+.overlay.hidden {
+  display: none;
+}
+.overlay p,
+.overlay address {
+  padding: 0 20vmin;
+}
+button.close {
+  background: transparent url('../cross.svg') center / 70% no-repeat;
+  height: 70px;
+  width: 70px;
+  margin: 20px 0 0 20px;
+}
