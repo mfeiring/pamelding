@@ -19,13 +19,15 @@
 			<li><a href="https://remarkable.com">ReMarkable</a></li>
 		</ul>
 	</main>
-	<aside id="signup">
-		<button id="signupButton">
-			<span class="text">Meld deg på</span>
+	<aside>
+		<button id="signupButton" onclick="showForm(true)">
+			<span class="text">
+        <span>Meld deg på</span>
+      </span>
 			<span class="circles"/>
 		</button>
-		<form id="signupForm" hidden>
-			<button class="close" id="hideSignup" type="button"></button>
+		<form id="signupForm" onsubmit="submitForm(event)" hidden>
+			<button class="close" type="button" onclick="showForm(false)"></button>
 			<label for="name">Navn</label>
 			<input name="name" type="text"/>
 			<label for="mail">Epost</label>
@@ -35,13 +37,16 @@
 					<span>Send</span>
 				</span>
 			</button>
+      <div id="success" hidden>
+        Du er påmeldt!
+      </div>
 		</form>
 	</aside>
 	<footer>
-		<button id="showInfo"><span>?</span></button>
+		<button onclick="showInfo(true)"><span>?</span></button>
 	</footer>
 	<article id="info" class="overlay hidden">
-		<button id="hideInfo" class="close"></button>
+		<button class="close" onclick="showInfo()"></button>
 		<p>
 			Bekk inviterer er et foredrag som skal inspirere og engasjere.
 			<a href="bekk.no">Bekk</a> har invitert noen av de mest interessante foredragsholdere i en spennende mix som vi håper alle blir inspirert av.

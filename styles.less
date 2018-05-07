@@ -103,18 +103,20 @@ ul {
   }
 }
 
-aside {
+aside > * {
   height: 50vmin;
   position: absolute;
   top: 0;
   right: 0;
   background-color: @gray;
+}
 
-  button {
-    height: 100%;
-    width: 100%;
+  aside {
+    button {
+    // height: 100%;
+    // width: 100%;
     width: 50vmin;
-    position: relative;
+    // position: relative;
     overflow: hidden;
     font-size: 1.4em;
 
@@ -134,21 +136,26 @@ aside {
       padding: calc(~'35vmin / 2 - 1.6em / 2') 0;
       z-index: 1;
 
-      &:before {
-        content: '';
-        width: 100%;
-        height: 2px;
-        background-color: currentColor;
-        position: absolute;
-        z-index: 1;
-        bottom: calc(~'35vmin / 2 - 1.8em / 2');
-        left: 0;
-        transform: scale(0);
-        transform-origin: left;
+      span {
+        position: relative;
+        display: inline-block;
+
+        &:before {
+          content: '';
+          width: 100%;
+          height: 2px;
+          background-color: currentColor;
+          position: absolute;
+          z-index: 1;
+          bottom: 0;
+          left: 0;
+          transform: scale(0);
+          transform-origin: left;
+        }
       }
 
       &:hover {
-        &:before {
+        span:before {
           transform: scale(1);
           transition: 0.3s;
         }
@@ -199,7 +206,8 @@ form {
   height: 70vh;
   background: @gray;
   padding: 40vh 10vw 0;
-  position: relative;
+  // position: relative;
+  z-index: 2;
 
   @media screen and (min-width: 30em) {
     padding: 25vh 55vmin 0 10vw;
@@ -231,6 +239,20 @@ form {
     top: 0;
   }
 
+  div {
+    height: 50vmin;
+    width: 50vmin;
+    background-color: black;
+    color: white;
+    font-size: 1.5em;
+    line-height: 50vmin;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    text-align: center;
+  }
+
   button[type="submit"] {
     height: 50vmin;
     // width: 30vh;
@@ -246,7 +268,6 @@ form {
       height: 15vmin;
       width: 15vmin;
       line-height: 15vmin;
-      transform: translate3d(0, 0, 0);
       transition: all 200ms ease-in-out;
       box-shadow: none;
 
@@ -265,36 +286,10 @@ form {
           transform-origin: left;
         }
       }
-
-
-      // border: 1px solid transparent;
     }
 
     &:hover > span {
-      box-shadow:
-      0 0 0 1px white, 0 0 0 7px black,
-      0 0 0 8px white, 0 0 0 14px black,
-      0 0 0 15px white, 0 0 0 21px black,
-      0 0 0 22px white, 0 0 0 28px black,
-      0 0 0 29px white, 0 0 0 35px black,
-      0 0 0 36px white, 0 0 0 42px black,
-      0 0 0 43px white, 0 0 0 49px black,
-      0 0 0 50px white, 0 0 0 56px black,
-      0 0 0 57px white, 0 0 0 63px black,
-      0 0 0 64px white, 0 0 0 70px black,
-      0 0 0 71px white, 0 0 0 77px black,
-      0 0 0 78px white, 0 0 0 84px black,
-      0 0 0 85px white, 0 0 0 91px black,
-      0 0 0 92px white, 0 0 0 98px black,
-      0 0 0 99px white, 0 0 0 105px black,
-      0 0 0 106px white, 0 0 0 112px black,
-      0 0 0 113px white, 0 0 0 119px black,
-      0 0 0 120px white, 0 0 0 126px black,
-      0 0 0 127px white, 0 0 0 133px black,
-      0 0 0 134px white, 0 0 0 140px black,
-      0 0 0 141px white, 0 0 0 147px black,
-      0 0 0 148px white, 0 0 0 154px black,
-      0 0 0 155px white;
+      .box-shadow-generate(1px, 6px, 30);
 
       span:before {
         transform: scale(1);
@@ -366,205 +361,7 @@ button.close {
   margin: 20px 0 0 20px;
 }
 
-// .loop(@n, @i: 1) when (@i =< @n) {
-//   box-shadow: 0 0 0 calc(~'@{i} * 1px') white,
-//   0 0 0 calc(~'(@{i} + 5) * 1px') black,
-//   .loop(@n, (@i + 6)); // code for each iteration
-// }
-
-//
-// * {
-//   outline: none !important;
-// }
-//
-// a {
-//   color: white;
-//   text-decoration: none;
-//   // font-size: 40px;
-// }
-//
-// li {
-//   font-size: 50px;
-//   list-style: none;
-// }
-//
-// header {
-//   max-height: 100px;
-//   font-size: 1.5em;
-//   padding: 40px 50px;
-// }
-//
-// main {
-//   position: absolute;
-//   bottom: 0;
-//   left: 0;
-//   background-color: black;
-//   color: white;
-//   font-size: 2em;
-//   width: 80%;
-//   height: calc(~'100vh - 104px');
-//   padding-right: 0;
-//
-//   h1 {
-//     text-indent: 200px;
-//     font-size: 1.6em;
-//     margin-top: 0;
-//     margin-bottom: 10px;
-//     font-weight: normal;
-//
-//     &:first-of-type {
-//       padding-top: 200px;
-//     }
-//   }
-// }
-//
-//
-// aside {
-//   // position: absolute;
-//   // top: 0;
-//   // right: 0;
-//   // height: 50vh;
-//   // width: 50vh;
-//   // background-color: @gray;
-//   // cursor: pointer;
-//
-//   button {
-//     height: 100%;
-//     position: absolute;
-//     top: 0;
-//     right: 0;
-//     height: 50vh;
-//     width: 35vw;
-//     // width: 100%;
-//     border: none;
-//     background-color: @gray;;
-//     font-family: 'FFDINWebProLight';
-//     font-size: 2em;
-//     font-weight: bold;
-//     cursor: pointer;
-//     // position: absolute;
-//     // bottom: 15vh;
-//     // left: 10vh;
-//     // z-index: 1;
-//
-//     .text {
-//       width: 250px;
-//       height: 250px;
-//       display: flex;
-//       align-items: center;
-//       justify-content: center;
-//       position: absolute;
-//       bottom: 4vh;
-//       left: 6.5vh;
-//       z-index: 1;
-//     }
-//   }
-//
-//   .circle {
-//     position: absolute;
-//     bottom: 4vh;
-//     left: 6.5vh;
-//     border: 1px solid transparent;
-//     height: 250px;
-//     width: 250px;
-//     border-radius: 50%;
-//     display: inline-block;
-//     transition: filter 200ms ease-in-out;
-//     filter: drop-shadow(0px 0px transparent) drop-shadow(0px 0px transparent) drop-shadow(0px 0px transparent) drop-shadow(0px 0px transparent) drop-shadow(0px 0px transparent) drop-shadow(0px 0px transparent) drop-shadow(0px 0px transparent) drop-shadow(60px -60px transparent);
-//   }
-//
-//   &:hover {
-//     .circle {
-//       border-color: white;
-//       filter: drop-shadow(4px -4px white) drop-shadow(8px -8px white) drop-shadow(12px -12px white) drop-shadow(16px -16px white) drop-shadow(20px -20px white) drop-shadow(24px -24px white) drop-shadow(28px -28px white) drop-shadow(60px -60px transparent);
-//     }
-//   }
-// }
-//
-//
-//
-// .box {
-//   height: 200px;
-//   width: 200px;
-//   background: gray;
-//   margin-bottom: 20px;
-// }
-//
-// .rectangle {
-//   //    border: 1px solid transparent;
-//   height: 100px;
-//   width: 100px;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   margin: auto;
-//   transform: translate3d(0, 0, 0);
-//   transition: all 200ms ease-in-out;
-//   box-shadow: none;
-//   &:hover {
-//     //        border-color: white;
-//     box-shadow: 0 0 0 1px white, 0 0 0 6px black, 0 0 0 7px white, 0 0 0 12px black, 0 0 0 13px white, 0 0 0 18px black, 0 0 0 19px white, 0 0 0 24px black, 0 0 0 25px white, 0 0 0 30px black, 0 0 0 31px white, 0 0 0 36px black, 0 0 0 37px white, 0 0 0 42px black, 0 0 0 43px white, 0 0 0 48px black, 0 0 0 49px white, 0 0 0 54px black, 0 0 0 55px white, 0 0 0 60px black, 0 0 0 61px white, 0 0 0 66px black, 0 0 0 67px white, 0 0 0 72px black, 0 0 0 73px white, 0 0 0 78px black, 0 0 0 79px white, 0 0 0 84px black, 0 0 0 85px white;
-//   }
-// }
-//
-// .flex {
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-// }
-//
-// label {
-//   display: block;
-//   color: white;
-//   font-size: 1.5em;
-// }
-//
-// input {
-//   background-color: transparent;
-//   font-size: 1.5em;
-//   border-style: solid;
-//   border-color: black;
-//   border-width: 0 0 1px 0;
-//   margin-bottom: 1.5em;
-// }
-//
-// .form-container {
-//   z-index: 100;
-//   background-color: @gray;
-//   height: 50vh;
-//   width: 700px;
-//   position: absolute;
-//   top: 0;
-//   right: 0;
-//   transition: transform 200ms;
-//   transform: translateX(700px);
-//
-//   .close {
-//     background: transparent url('cross.svg') center / 70% no-repeat;
-//     border: none;
-//     height: 70px;
-//     width: 70px;
-//     margin: 15px 0 0 15px;
-//   }
-//
-//   &.active {
-//     transform: translateX(0);
-//   }
-// }
-//
-// form {
-//   padding: 80px 150px;
-//
-//   button {
-//     height: 30vh;
-//     width: 30vh;
-//     background-color: black;
-//     color: white;
-//     font-size: 1.5em;
-//     font-family: 'FFDINWebProLight';
-//     border: none;
-//     position: absolute;
-//     top: 0;
-//     right: 0;
-//   }
-// }
+.box-shadow-generate(@white, @black, @n, @index: 1) when (@index =< @n) {
+    box-shadow+: 0 0 0 @white white, 0 0 0 @index*@black black;
+    .box-shadow-generate(@white + @black, @black, @n, (@index + 1));
+}

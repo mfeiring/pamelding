@@ -1,50 +1,42 @@
 const signupButton = document.getElementById('signupButton');
-const hideSignup = document.getElementById('hideSignup');
-const signup = document.getElementById('signup');
 const signupForm = document.getElementById('signupForm');
-const showInfoButton = document.getElementById('showInfo');
-const hideInfoButton = document.getElementById('hideInfo');
 const infoContainer = document.getElementById('info');
 const main = document.getElementById('main');
+const successContainer = document.getElementById('success');
 
 const isValidForm = (data) => data.get('name') && data.get('email');
+
+const handleResponse = (res) => {
+  if (res.status === 201) {
+    successContainer.hidden = false;
+  }
+}
 
 document.body.onmousemove = ({screenX: xPos, screenY: yPos}) => {
   main.style.bottom = `-${(xPos + yPos)/70}px`;
   main.style.left = `-${(yPos - xPos)/40}px`;
-  signup.style.top = `-${xPos/80}px`;
-  signup.style.right = `-${yPos/55}px`;
+  signupButton.style.top = `-${xPos/80}px`;
+  signupButton.style.right = `-${yPos/55}px`;
 }
 
-signupButton.onclick = (e) => {
-  signupButton.style.display = 'none';
-  signupForm.hidden = false;
+showForm = (shouldShow) => {
+  signupForm.hidden = !shouldShow;
 }
 
-hideSignup.onclick = () => {
-  signupButton.style.display = 'block';
-  signupForm.hidden = true;
-}
-
-signupForm.onsubmit = (e) => {
+submitForm = (e) => {
   e.preventDefault();
-  const formData = new FormData(signupForm);
+  const formData = new FormData(e.target);
 
   if (isValidForm(formData)) {
-    fetch('/signup', {
+    fetch('/api/attending', {
       method: 'POST',
       body: formData
     })
-    .then(res => res)
-    .then(data => data)
+    .then(handleResponse)
     .catch(err => console.log(err))
   }
 }
 
-showInfoButton.onclick = () => {
-  infoContainer.classList.remove('hidden');
-}
-
-hideInfoButton.onclick = () => {
-  infoContainer.classList.add('hidden');
+showInfo = () => {
+  infoContainer.classList.toggle('hidden');
 }
