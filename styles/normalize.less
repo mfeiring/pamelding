@@ -1,0 +1,52 @@
+// main: ../styles.less
+
+* {
+  box-sizing: border-box;
+  font-family: 'FFDINWebProLight';
+}
+
+html {
+  font-size: 1em;
+  cursor: url('../default-cursor.png'), auto;
+
+  @media screen and (min-width: 30em) {
+    font-size: 3vw;
+  }
+
+  @media screen and (min-width: 55em) {
+    font-size: 1.5em;
+  }
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+
+button, a {
+  cursor: url('../pointer-cursor.png'), auto;
+}
+
+button {
+  border: none;
+  background: transparent;
+  outline: none;
+}
+
+a {
+  color: currentColor;
+}
+
+li {
+  list-style: none;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+address {
+  font-style: normal;
+}

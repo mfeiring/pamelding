@@ -13,17 +13,15 @@
 	<header>Bekk inviterer</header>
 	<main id="main">
 		<ul>
-			<li><a href="https://vestre.com/">Vestre</a></li>
-			<li><a href="http://anti.as">Anti</a>/<a href="http://void.as/">Void</a></li>
-			<li><a>Henke waller</a></li>
-			<li><a href="https://remarkable.com">ReMarkable</a></li>
+			<li class="link-effect-5"><a data-hover="Vestre" href="https://vestre.com/">Vestre<span class="arrow"/></a></li>
+			<li class="link-effect-4"><a data-hover="Anti" href="http://anti.as">Anti</a> / <a data-hover="Void" href="http://void.as/">Void</a></li>
+			<li class="link-effect-2"><a data-hover="Henke waller"><span data-hover="Henke waller">Henke waller</span></a></li>
+			<li class="link-effect-14"><a data-hover="ReMarkable" href="https://remarkable.com"><span>ReMarkable</span><span class="arrow"/></a></li>
 		</ul>
 	</main>
 	<aside>
-		<button id="signupButton" onclick="showForm(true)">
-			<span class="text">
-        <span>Meld deg på</span>
-      </span>
+		<button class="overflow-hidden" id="signupButton" onclick="showForm(true)">
+			<span class="text">Meld deg på</span>
 			<span class="circles"/>
 		</button>
 		<form id="signupForm" onsubmit="submitForm(event)" hidden>
@@ -32,7 +30,7 @@
 			<input name="name" type="text"/>
 			<label for="mail">Epost</label>
 			<input name="email" type="email"/>
-			<button type="submit">
+			<button class="overflow-hidden" type="submit">
 				<span>
 					<span>Send</span>
 				</span>
@@ -43,19 +41,21 @@
 		</form>
 	</aside>
 	<footer>
-		<button onclick="showInfo(true)"><span>?</span></button>
+		<button onclick="showInfo(true)"><span class="box foo">?</span></button>
 	</footer>
 	<article id="info" class="overlay hidden">
+    <div class="overlay-content">
 		<button class="close" onclick="showInfo()"></button>
 		<p>
-			Bekk inviterer er et foredrag som skal inspirere og engasjere.
+			<span>Bekk inviterer er et foredrag som skal inspirere og engasjere.
 			<a href="bekk.no">Bekk</a> har invitert noen av de mest interessante foredragsholdere i en spennende mix som vi håper alle blir inspirert av.
-			Håper du vil komme til oss på skuret på Vippetangen.
+			Håper du vil komme til oss på skuret på Vippetangen.</span>
 		</p>
 		<address>
 			Adresse: <br/>
-			Akershusstranda 21, Skur 39 Vippetangen, 0150 Oslo
+      <span>Akershusstranda 21, Skur 39 Vippetangen, 0150 Oslo</span>
 		</address>
+  </div>
 	</article>
 	<script type="text/javascript" src="index.js"></script>
 </body>
