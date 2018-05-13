@@ -30,6 +30,7 @@ button {
   border: none;
   background: transparent;
   outline: none;
+  padding: 0;
 }
 a {
   color: currentColor;
@@ -77,7 +78,7 @@ input {
 }
 p,
 address {
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 .overflow-hidden {
   overflow: hidden;
@@ -279,9 +280,19 @@ footer button {
   display: none;
   transform: scale(0);
 }
-.overlay p,
+.overlay p {
+  padding: 10vmin 15vmin 0;
+}
 .overlay address {
-  padding: 0 20vmin;
+  padding: 0 15vmin;
+}
+@media screen and (min-width: 30em) {
+  .overlay p {
+    padding: 10vmin 25vmin 0;
+  }
+  .overlay address {
+    padding: 0 25vmin;
+  }
 }
 @keyframes unfoldIn {
   0% {
@@ -295,9 +306,8 @@ footer button {
   }
 }
 button.close {
-  background: transparent url('../cross.svg') center / 70% no-repeat;
-  height: 70px;
-  width: 70px;
+  height: 60px;
+  width: 60px;
   margin: 20px 0 0 20px;
 }
 .box {

@@ -25,7 +25,27 @@
 			<span class="circles"/>
 		</button>
 		<form id="signupForm" onsubmit="submitForm(event)" hidden>
-			<button class="close" type="button" onclick="showForm(false)"></button>
+			<button class="close" type="button" onclick="showForm(false)">
+        <svg class="cross" xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60">
+          <polygon fill-rule="evenodd" points="0 2 2 0 30 28 58 0 60 2 32 30 60 58 58 60 30 32 2 60 0 58 28 30">
+            <animate
+              class="animateIn"
+              attributeName="points"
+              fill="freeze"
+              begin="indefinite"
+              dur="500ms"
+              to="0 2 2 0 60 58 58 0 60 2 2 60 60 58 58 60 0 2 2 60 0 58 58 0" />
+            <animate
+              class="animateOut"
+              attributeName="points"
+              fill="freeze"
+              begin="indefinite"
+              dur="500ms"
+              to="0 2 2 0 30 28 58 0 60 2 32 30 60 58 58 60 30 32 2 60 0 58 28 30"
+             />
+          </polygon>
+        </svg>
+      </button>
 			<label for="name">Navn</label>
 			<input name="name" type="text"/>
 			<label for="mail">Epost</label>
@@ -45,7 +65,27 @@
 	</footer>
 	<article id="info" class="overlay hidden">
     <div class="overlay-content">
-		<button class="close" onclick="showInfo()"></button>
+		<button class="close" onclick="showInfo()">
+      <svg class="cross" xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60">
+        <polygon fill-rule="evenodd" points="0 2 2 0 30 28 58 0 60 2 32 30 60 58 58 60 30 32 2 60 0 58 28 30">
+          <animate
+            class="animateIn"
+            attributeName="points"
+            fill="freeze"
+            begin="indefinite"
+            dur="500ms"
+            to="0 2 2 0 60 58 58 0 60 2 2 60 60 58 58 60 0 2 2 60 0 58 58 0" />
+          <animate
+            class="animateOut"
+            attributeName="points"
+            fill="freeze"
+            begin="indefinite"
+            dur="500ms"
+            to="0 2 2 0 30 28 58 0 60 2 32 30 60 58 58 60 30 32 2 60 0 58 28 30"
+           />
+        </polygon>
+      </svg>
+    </button>
 		<p>
 			<span>Bekk inviterer er et foredrag som skal inspirere og engasjere.
 			<a href="bekk.no">Bekk</a> har invitert noen av de mest interessante foredragsholdere i en spennende mix som vi håper alle blir inspirert av.

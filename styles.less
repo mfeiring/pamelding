@@ -252,27 +252,44 @@ footer {
     transform: scale(0);
   }
 
-  p, address {
-    padding: 0 20vmin;
+  p {
+    padding: 10vmin 15vmin 0;
   }
+
+  address {
+    padding: 0 15vmin;
+  }
+
+  @media screen and (min-width: 30em) {
+    p {
+      padding: 10vmin 25vmin 0;
+    }
+
+    address {
+      padding: 0 25vmin;
+    }
+  }
+
+  // p, address {
+  //   padding: 0 20vmin;
+  // }
 }
 
 @keyframes unfoldIn {
   0% {
-    transform:scaleY(.003) scaleX(0);
+    transform: scaleY(.003) scaleX(0);
   }
   50% {
-    transform:scaleY(.003) scaleX(1);
+    transform: scaleY(.003) scaleX(1);
   }
   100% {
-    transform:scaleY(1) scaleX(1);
+    transform: scaleY(1) scaleX(1);
   }
 }
 
 button.close {
-  background: transparent url('../cross.svg') center / 70% no-repeat;
-  height: 70px;
-  width: 70px;
+  height: 60px;
+  width: 60px;
   margin: 20px 0 0 20px;
 }
 
