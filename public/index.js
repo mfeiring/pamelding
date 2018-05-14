@@ -37,6 +37,7 @@ showForm = (shouldShow) => {
 submitForm = (e) => {
   e.preventDefault();
   const formData = new FormData(e.target);
+  formData.append('timestamp', new Date());
 
   if (isValidForm(formData)) {
     fetch('/api/attending', {
