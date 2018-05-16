@@ -7,9 +7,9 @@ html {
 }
 form {
   font-size: 1.2em;
-  with: 100%;
+  width: 80%;
   max-width: 400px;
-  margin: 30vh auto;
+  margin: 30vh auto 50px;
 }
 label {
   display: block;
@@ -22,6 +22,10 @@ input {
   border: none;
   border-bottom: 2px solid black;
   background: transparent;
+}
+h1 {
+  font-size: 1.5em;
+  margin-left: 10%;
 }
 table {
   width: 80%;

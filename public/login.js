@@ -15,7 +15,9 @@ formatTime = timestamp => (
 )
 
 createTable = data => {
-  console.log(data)
+  const numberOfAttending = document.getElementById('attending-no');
+  numberOfAttending.innerText = `Antall påmeldte: ${data.length}`;
+
   const table = document.getElementById('list');
   const header = '<tr><th>Navn</th><th>Mail</th><th>Påmeldt</th></tr>'
 
