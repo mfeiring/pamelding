@@ -1,101 +1,78 @@
 <!doctype html>
 
 <html>
+
 <head>
-	<title>Bekk inviterer</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1">
-  <link rel="stylesheet" href="/stylesheets/styles.css"/>
-	<link rel="stylesheet" href="/stylesheets/fonts.css"/>
+  <title>Bekk inviterer</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1">
+  <link rel="stylesheet" href="/stylesheets/styles.css" />
+  <link rel="stylesheet" href="/stylesheets/fonts.css" />
   <link rel="stylesheet" href="https://fonts.typotheque.com/WF-016699-001583.css" type="text/css">
 </head>
+
 <body>
-	<header>Bekk inviterer</header>
-	<main id="main">
-		<ul>
-			<li class="link-effect-5"><a data-hover="Vestre" href="https://vestre.com/">Vestre<span class="arrow"/></a></li>
-			<li class="link-effect-4"><a data-hover="Anti" href="http://anti.as">Anti</a> / <a data-hover="Void" href="http://void.as/">Void</a></li>
-			<li class="link-effect-2"><a data-hover="Henke waller"><span data-hover="Henke waller">Henke waller</span></a></li>
-			<li class="link-effect-14"><a data-hover="ReMarkable" href="https://remarkable.com"><span>ReMarkable</span><span class="arrow"/></a></li>
-		</ul>
-	</main>
-	<aside>
-		<button class="overflow-hidden" id="signupButton" onclick="showForm(true)">
-			<span class="text">Meld deg på</span>
-			<span class="circles"/>
-		</button>
-		<form id="signupForm" onsubmit="submitForm(event)" hidden>
-			<button class="close" type="button" onclick="showForm(false)">
+  <header>Bekk inviterer</header>
+  <main id="main">
+    <ul>
+      <li class="link-effect-5"><a data-hover="Test" href="#">Test<span class="arrow" /></a></li>
+      <li class="link-effect-4"><a data-hover="Test" href="#">Test</a> / <a data-hover="Test" href="#">Test</a></li>
+      <li class="link-effect-2"><a data-hover="Test"><span data-hover="Test">Test</span></a></li>
+      <li class="link-effect-14"><a data-hover="Test" href="#"><span>Test</span><span class="arrow" /></a></li>
+    </ul>
+  </main>
+  <aside>
+    <button class="overflow-hidden" id="signupButton" onclick="showForm(true)">
+      <span class="text">Meld deg på</span>
+      <span class="circles" />
+    </button>
+    <form id="signupForm" onsubmit="submitForm(event)" hidden>
+      <button class="close" type="button" onclick="showForm(false)">
         <svg class="cross" xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60">
           <polygon fill-rule="evenodd" points="0 2 2 0 30 28 58 0 60 2 32 30 60 58 58 60 30 32 2 60 0 58 28 30">
-            <animate
-              class="animateIn"
-              attributeName="points"
-              fill="freeze"
-              begin="indefinite"
-              dur="500ms"
-              to="0 2 2 0 60 58 58 0 60 2 2 60 60 58 58 60 0 2 2 60 0 58 58 0" />
-            <animate
-              class="animateOut"
-              attributeName="points"
-              fill="freeze"
-              begin="indefinite"
-              dur="500ms"
-              to="0 2 2 0 30 28 58 0 60 2 32 30 60 58 58 60 30 32 2 60 0 58 28 30"
-             />
+            <animate class="animateIn" attributeName="points" fill="freeze" begin="indefinite" dur="500ms" to="0 2 2 0 60 58 58 0 60 2 2 60 60 58 58 60 0 2 2 60 0 58 58 0" />
+            <animate class="animateOut" attributeName="points" fill="freeze" begin="indefinite" dur="500ms" to="0 2 2 0 30 28 58 0 60 2 32 30 60 58 58 60 30 32 2 60 0 58 28 30" />
           </polygon>
         </svg>
       </button>
-			<label for="name">Navn</label>
-			<input name="name" type="text"/>
-			<label for="mail">Epost</label>
-			<input name="email" type="email"/>
-			<button class="overflow-hidden" type="submit">
-				<span>
-					<span>Send</span>
-				</span>
-			</button>
+      <label for="name">Navn</label>
+      <input name="name" type="text" />
+      <label for="mail">Epost</label>
+      <input name="email" type="email" />
+      <button class="overflow-hidden" type="submit">
+        <span>
+          <span>Send</span>
+        </span>
+      </button>
       <div id="success" hidden>
         Du er påmeldt!
       </div>
-		</form>
-	</aside>
-	<footer>
-		<button onclick="showInfo(true)"><span class="box foo">?</span></button>
-	</footer>
-	<article id="info" class="overlay hidden">
+    </form>
+  </aside>
+  <footer>
+    <button onclick="showInfo(true)"><span class="box foo">?</span></button>
+  </footer>
+  <article id="info" class="overlay hidden">
     <div class="overlay-content">
-		<button class="close" onclick="showInfo()">
-      <svg class="cross" xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60">
-        <polygon fill-rule="evenodd" points="0 2 2 0 30 28 58 0 60 2 32 30 60 58 58 60 30 32 2 60 0 58 28 30">
-          <animate
-            class="animateIn"
-            attributeName="points"
-            fill="freeze"
-            begin="indefinite"
-            dur="500ms"
-            to="0 2 2 0 60 58 58 0 60 2 2 60 60 58 58 60 0 2 2 60 0 58 58 0" />
-          <animate
-            class="animateOut"
-            attributeName="points"
-            fill="freeze"
-            begin="indefinite"
-            dur="500ms"
-            to="0 2 2 0 30 28 58 0 60 2 32 30 60 58 58 60 30 32 2 60 0 58 28 30"
-           />
-        </polygon>
-      </svg>
-    </button>
-		<p>
-			<span>Bekk inviterer er et foredrag som skal inspirere og engasjere.
-			<a href="bekk.no">Bekk</a> har invitert noen av de mest interessante foredragsholdere i en spennende mix som vi håper alle blir inspirert av.
-			Håper du vil komme til oss på skuret på Vippetangen.</span>
-		</p>
-		<address>
-			Adresse: <br/>
-      <span>Akershusstranda 21, Skur 39 Vippetangen, 0150 Oslo</span>
-		</address>
-  </div>
-	</article>
-	<script type="text/javascript" src="index.js"></script>
+      <button class="close" onclick="showInfo()">
+        <svg class="cross" xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60">
+          <polygon fill-rule="evenodd" points="0 2 2 0 30 28 58 0 60 2 32 30 60 58 58 60 30 32 2 60 0 58 28 30">
+            <animate class="animateIn" attributeName="points" fill="freeze" begin="indefinite" dur="500ms" to="0 2 2 0 60 58 58 0 60 2 2 60 60 58 58 60 0 2 2 60 0 58 58 0" />
+            <animate class="animateOut" attributeName="points" fill="freeze" begin="indefinite" dur="500ms" to="0 2 2 0 30 28 58 0 60 2 32 30 60 58 58 60 30 32 2 60 0 58 28 30" />
+          </polygon>
+        </svg>
+      </button>
+      <p>
+        <span>Bekk inviterer er et foredrag som skal inspirere og engasjere.
+          <a href="bekk.no">Bekk</a> har invitert noen av de mest interessante foredragsholdere i en spennende mix som
+          vi håper alle blir inspirert av.
+          Håper du vil komme til oss på skuret på Vippetangen.</span>
+      </p>
+      <address>
+        Adresse: <br />
+        <span>Akershusstranda 21, Skur 39 Vippetangen, 0150 Oslo</span>
+      </address>
+    </div>
+  </article>
+  <script type="text/javascript" src="index.js"></script>
 </body>
